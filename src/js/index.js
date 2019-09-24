@@ -1,15 +1,16 @@
 import '../styles/index.scss';
-console.log('Started');
+import video from '../media/video.mp4';
 
-const node = document.getElementById('test');
+const videoHostNode = document.getElementById('background');
+const videoTag = document.createElement('video');
+const sourceTag = document.createElement('source');
 
-const patchStyle = {
-  width: '200px',
-  height: '200px',
-  backgroundColor: 'blue',
-};
+videoTag.autoplay = true;
+videoTag.muted = true;
+videoTag.loop = true;
+videoTag.id = 'backVideo';
+sourceTag.src = video;
+sourceTag.type = 'video/mp4';
 
-Object.entries(patchStyle).forEach(entryPair => {
-  node.style[entryPair[0]] = entryPair[1];
-});
-
+videoTag.appendChild(sourceTag);
+videoHostNode.appendChild(videoTag);
