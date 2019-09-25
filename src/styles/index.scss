@@ -1,4 +1,4 @@
-section {
+#content {
   position: absolute;
   top:0;
   left:0;
@@ -9,18 +9,4 @@ section {
   color: white;
 }
 
-#background{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top:0;
-  left:0;
-  pointer-events: none;
-  overflow: hidden;
-}
 
-#backVideo {
-  width: auto;
-  height: 100%;
-  transform: scale(1.2);
-  pointer-events: none; }
