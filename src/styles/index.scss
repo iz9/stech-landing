@@ -1,12 +1,46 @@
-#content {
+#canvas {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  overflow-y: scroll;
 }
-
-
+#main-grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 50px 1fr;
+  #header{
+    //background-color:rgba(255,255,255, 0.3);
+    background-color:black;
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    div, nav{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  #content{
+    //background-color:rgba(255,255,255, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
+    grid-column: 2/3;
+    display: flex;
+    flex-direction:column;
+    padding: 20px;
+    justify-content: space-evenly;
+  }
+}
+h1{
+  font-size: 40px;
+}
+h2{
+  font-size: 30px;
+}
