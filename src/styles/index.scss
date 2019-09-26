@@ -1,3 +1,5 @@
+//$main_yellow: #FFDD62;
+$main_yellow: #F9D523;
 #canvas {
   position: absolute;
   top: 0;
@@ -6,10 +8,11 @@
   height: 100%;
   z-index: 1;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  //background-color: rgba(0, 0, 0, 0.5);
   overflow-y: scroll;
 }
 section {
+  position: relative;
   min-height: 100vh;
   display: grid;
   grid-gap: 0;
@@ -19,7 +22,8 @@ section {
 .yellow-section{
   //border-top: 3px solid black;
   //border-bottom: 3px solid black;
-  background-color: rgba(249, 213, 35, 0.3);
+  //background-color: rgba(249, 213, 35, 0.3);
+  background-color: rgba($main_yellow, .4);
 }
 .content-grid {
   display: grid;
@@ -30,25 +34,78 @@ section {
   grid-area: content-box;
   display: grid;
   padding: 20px;
+  position: relative;
 
-  background-color:rgba(249, 213, 35, 0.2);
-background-image: linear-gradient(
-    to left top,
-    rgba(225, 99, 19, 0.6) 0%,
-    rgba(249, 213, 35, 0.6) 100%
-  );
+  //background-color:rgba(249, 213, 35, 0.2);
+//background-image: linear-gradient(
+//    to left top,
+//    rgba(225, 99, 19, 0.6) 0%,
+//    rgba(249, 213, 35, 0.6) 100%
+//  );
+}
+.texture{
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-repeat: repeat;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  opacity:1;
+  &.grey{
+    background-image: url('../images/always_grey.png');
+  }
+  &.yellow{
+    background-image: url('../images/halftone-yellow.png');
+  }
+  &.squares{
+    background-image: url('../images/squares.png');
+  }
+  &.twill{
+
+    background-image: url('../images/black-twill.png');
+  }
+  &.carbon{
+    background-image: url('../images/white-carbon.png');
+  }
+  &.stripes{
+    background-image: url('../images/cross-stripes.png');
+  }
+  &.worn{
+    background-image: url('../images/worn-dots.png');
+  }
+
+  &.bright{
+    background-image: url('../images/bright-squares.png');
+  }
+
+  &.axiom{
+    background-image: url('../images/axiom-pattern.png');
+  }
+
+  &.wall{
+    background-image: url('../images/wall-4-light.png');
+  }
 }
 
 #header {
   height: 60px;
   min-height: 60px;
-  background-color: rgb(249, 213, 35);
+  background-color: $main_yellow;
+  background-image: url('../images/cross-stripes.png');
+  opacity: 1;
+  background-color: black;
+  color: white;
+  background-repeat: repeat;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 50;
-  border-bottom:3px solid black;
+  //border-bottom:1px solid black;
   .content-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -71,10 +128,16 @@ background-image: linear-gradient(
       '. . .';
   }
 
+  background-color: rgba(0,0,0,.6);
+  background-image: url('../images/axiom-pattern.png');
   .content-box {
     grid-template-areas:
       'face-header face-header'
       '. face-menu';
+    //background-color: rgba($main_yellow, 0.8);
+
+    background-color: rgba($main_yellow,.9);
+    background-image: url('../images/worn-dots.png');
   }
   header {
     grid-area: face-header;
@@ -91,11 +154,15 @@ background-image: linear-gradient(
     //  'content-box content-box .'
     //  '. . .';
   }
+
+  background-color: rgba($main_yellow,.8);
+  background-image: url('../images/white-carbon.png');
   //.content-box{
   //background-image: linear-gradient(-20deg, rgba(36,210,146, .5) 0%,  rgba(213,88,200, .5) 100%);
   //}
 }
 #contacts {
+  background-color: rgba(0,0,0,.6);
   .content-grid {
     grid-template-areas:
       '. . .'
@@ -105,5 +172,11 @@ background-image: linear-gradient(
   }
 }
 footer{
+  position: relative;
+
+  //background-image: url('../images/axiom-pattern.png');
+  background-color: rgba(0,0,0,.9);
+  //background-image: url('../images/always_grey.png');
+  background-image: url('../images/white-carbon.png');
   min-height: 50vh;
 }
